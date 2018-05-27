@@ -7,7 +7,8 @@
     = link_to new.title, new, class: 'core-Link'
 
 .rnk-Section_FeatureHeadlinesFooter
-  = image_tag new.main_photo
+  %p
+    = new.intro_text.html_safe
 
   .core-BlogPost_CommentsDark
     = new.replies_count
@@ -25,8 +26,8 @@
       = link_to new.title, new, class: 'core-Link'
 
   .rnk-Section_FeatureHeadlinesFooter
-    = avatar(new.author, :thumbnail)
-    %span= link_to new.author.nick, new.author
+    %p
+      = new.intro_text.html_safe
 
     .core-BlogPost_CommentsDark
       = new.replies_count
