@@ -7,8 +7,7 @@
     = link_to post.title, post, class: 'core-Link'
 
 .rnk-Section_FeatureHeadlinesFooter
-  = avatar(post.author, :thumbnail)
-  %span= link_to post.author.nick, post.author
+  = image_tag post.main_photo
 
   .core-BlogPost_CommentsDark
     = post.replies_count
