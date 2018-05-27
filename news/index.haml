@@ -1,2 +1,19 @@
 - @news.each do |new|
-  = render 'news/new', new: new
+  .rnk-Section_FeatureHeadlinesHeader
+    = l new.created_at, format: :short
+
+  .rnk-Section_FeatureHeadlinesBody
+    %h3.rnk-Section_Title
+      = link_to new.title, new, class: 'core-Link'
+
+  .rnk-Section_FeatureHeadlinesFooter
+    %p
+      = new.intro_text.html_safe
+
+    .core-BlogPost_CommentsDark
+      = new.replies_count
+
+    - if new.likes_count.positive?
+      .core-BlogPost_LikeDark
+        = new.likes_count
+  
