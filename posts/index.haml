@@ -1,36 +1,16 @@
 - post = @posts.shift
-.rnk-Section_FeatureHeadlinesHeader
-  = l post.created_at, format: :short
-
-.rnk-Section_FeatureHeadlinesBody
-  %h3.rnk-Section_Title
-    = link_to post.title, post, class: 'core-Link'
+  = render 'articles/date_and_title', article: post
 
 .rnk-Section_FeatureHeadlinesFooter
   = image_tag post.main_photo
 
-  .core-BlogPost_CommentsDark
-    = post.replies_count
-
-  - if post.likes_count.positive?
-    .core-BlogPost_LikeDark
-      = post.likes_count
+  = render 'articles/replies_and_likes', article: post
 
 - @posts.each do |post|
-  .rnk-Section_FeatureHeadlinesHeader
-    = l post.created_at, format: :short
-
-  .rnk-Section_FeatureHeadlinesBody
-    %h3.rnk-Section_Title
-      = link_to post.title, post, class: 'core-Link'
+  = render 'articles/date_and_title', article: post
 
   .rnk-Section_FeatureHeadlinesFooter
     = avatar(post.author, :thumbnail)
     %span= link_to post.author.nick, post.author
 
-    .core-BlogPost_CommentsDark
-      = post.replies_count
-
-    - if post.likes_count.positive?
-      .core-BlogPost_LikeDark
-        = post.likes_count
+    = render 'articles/replies_and_likes', article: post

@@ -1,0 +1,6 @@
+.core-BlogPost_CommentsDark
+  = new.replies_count
+
+- if new.likes_count.positive?
+  .core-BlogPost_LikeDark
+    = new.likes_count
