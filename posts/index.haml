@@ -1,5 +1,1 @@
-- post = @posts.shift
-= render 'articles/article', article: post, position: 1
-
-- @posts.each_with_index do |post, i|
-  = render 'articles/article', article: post, position: i
+= render 'articles/index', articles: @posts
