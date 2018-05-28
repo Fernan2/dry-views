@@ -1,0 +1,17 @@
+.rnk-Section_FeatureHeadlinesHeader
+  = l article.created_at, format: :short
+
+.rnk-Section_FeatureHeadlinesBody
+  %h3.rnk-Section_Title
+    = link_to article.title, article, class: 'core-Link'
+
+.rnk-Section_FeatureHeadlinesFooter
+
+  = yield
+
+  .core-BlogPost_CommentsDark
+    = article.replies_count
+
+  - if article.likes_count.positive?
+    .core-BlogPost_LikeDark
+      = article.likes_count
