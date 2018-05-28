@@ -8,15 +8,7 @@
 
   .rnk-Section_FeatureHeadlinesFooter
 
-    - if article.is_a? New
-      %p
-        = article.intro_text.html_safe
-    - elsif position == 1
-      %h3.rnk-Section_Title
-        = link_to article.title, article, class: 'core-Link'
-    - else
-      = avatar(article.author, :thumbnail)
-      %span= link_to article.author.nick, article.author
+    = article.decorate.custom_html(position: position)
 
     .core-BlogPost_CommentsDark
       = article.replies_count
